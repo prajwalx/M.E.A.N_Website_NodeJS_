@@ -1,0 +1,398 @@
+<html>
+<head>
+  <meta charset="utf-8"/>
+<style>
+body
+{
+  background-color:#d5f4e6;
+}
+div.fixed{
+
+
+    border-bottom: 100px solid #cc3300;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	height: 0;
+	width: 0px;
+
+	border-radius:10px;
+	position:fixed;
+	bottom:0px;
+	right:600px;
+
+
+}
+div#trapezoid {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  width: 100px;
+  height: 0;
+  border: 50px solid transparent;
+  border-top: 1px solid black;
+  border-bottom: 100px solid brown;
+
+  -webkit-transform: rotateZ(539.7262430132355deg)   ;
+  transform: rotateZ(539.7262430132355deg)   ;
+  position:absolute;
+
+  bottom:-350px;
+  right:30px;
+   /*-webkit-transition: width 2s;  For Safari 3.1 to 6.0 */
+    transition: width 2s;
+
+}
+div.trapezoid:hover
+{
+    opacity: 0.3;
+    /*filter: alpha(opacity=30);*/
+}
+div.base{
+  width: 0;
+  height: 0;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  border-top: 150px solid #cc3399;
+
+  border-radius: 75%;
+  position:fixed;
+	bottom:350px;
+	right:600px;
+}
+div.diamond {
+    border-style: solid;
+    border-color: transparent transparent #cc3300 transparent;
+    border-width: 0 35px 35px 35px;
+    height: 0;
+    width: 70px;
+    position: relative;
+    margin: 250px 0 400px 600px;
+
+
+}
+div.diamond:after {
+    content: "";
+    position: absolute;
+    top: 35px;
+    left: -35px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: red transparent transparent transparent;
+    border-width: 98px 70px 0 70px;
+
+}
+
+div#base
+{
+width:120px;
+height:120px;
+background-color:lightgreen;
+position:absolute;
+top:470px;
+left:58px;
+
+border-top-left-radius:60px;
+border-top-right-radius:60px;
+border-style:solid;
+border-color:white;
+
+}
+div.flower
+{
+background-color:lightgreen;
+height:250px;
+width:250px;
+position:relative;
+left:560px;
+border-radius:250px;
+}
+div#l1
+{
+width:125px;
+height:125px;
+background-color:cyan;
+border-bottom-left-radius:125px;
+border-top-right-radius:125px;
+border-style:solid;
+border-color:darkblue;
+}
+div#l2
+{
+width:125px;
+height:125px;
+background-color:magenta;
+border-bottom-right-radius:125px;
+border-top-left-radius:125px;
+border-style:solid;
+border-color:black;
+}
+div#l3
+{
+width:125px;
+height:125px;
+background-color:blue;
+position:absolute;
+top:0px;
+left:125px;
+border-bottom-right-radius:125px;
+border-top-left-radius:125px;
+border-style:solid;
+border-color:black;
+}
+div#l4
+{
+width:125px;
+height:125px;
+background-color:#ff0066;
+position:absolute;
+top:125px;
+left:125px;
+border-bottom-left-radius:125px;
+border-top-right-radius:125px;
+border-style:solid;
+border-color:black;
+}
+div#trapezoid:hover
+{
+    opacity: 0.5;
+
+}
+div#l1:hover
+{
+    opacity: 0.5;
+
+}
+div#l2:hover
+{
+    opacity: 0.5;
+
+}
+div#l3:hover
+{
+    opacity: 0.5;
+
+}
+div#l4:hover
+{
+    opacity: 0.5;
+
+}
+div#lc:hover
+{
+    opacity: 0.7;
+
+}
+div#lc
+{
+width:62.5px;
+height:62.5px;
+background-color:yellow;
+
+border-radius:62.5px;
+position:absolute;
+top:93.75px;
+left:93.75px;
+border-style:solid;
+border-color:orange;
+}
+div#ll
+{
+width:100px;
+height:450px;
+border:solid 5px lightgreen;
+border-color:transparent lightgreen transparent transparent;
+border-bottom-right-radius:400px;
+position:absolute;
+top:93.75;
+left:20.75;
+}
+div.drop
+{
+  width: 45px;
+  height: 45px;
+  background-color: #80ced6;
+  border-radius: 50%;
+  border:4px solid blue;
+  border-top-left-radius: 0;
+  transform: rotate(45deg);
+  position: absolute;
+  opacity: 0;
+
+
+}
+div.ripple
+{
+  position: relative;
+  top:390px;
+  left:300px;
+  width:50px;
+  height: 25px;
+  border: 5px solid blue;
+  border-radius: 50%/50%;
+  opacity: 0;
+
+}
+div.ripple2
+{
+  position: absolute;
+  top:-17px;
+  left:-30px;
+  width:100px;
+  height: 50px;
+  border: 5px solid blue;
+  border-radius: 50%/50%;
+  opacity: 0;
+
+}
+@keyframes rip2 {
+  0%
+  {
+    border-color: darkblue;
+    width: 100px;
+    height: 50px;
+    opacity: 1;
+  }
+
+  25%
+  {
+    opacity: 0.75;
+    width:150px;
+    height: 75px;
+
+  }
+
+  75%
+  {
+    opacity: 0.5;
+
+
+  }
+
+  100%
+  {
+   top:-10px;
+   left:-20px;
+   width: 200px;
+   height: 100px;
+   opacity: 0;
+  }
+
+
+}
+
+@keyframes rip {
+  0%
+  {
+    border-color: darkblue;
+    width:50px;
+    height: 25px;
+    opacity: 0.75;
+  }
+
+  25%
+  {
+    opacity: 0.55;
+    width: 100px;
+    height: 50px;
+
+  }
+
+  75%
+  {
+    opacity: 0.35;
+    width:150px;
+    height: 75px;
+
+  }
+
+  100%
+  {
+
+   width: 200px;
+   height: 100px;
+   opacity: 0;
+  }
+
+
+}
+@keyframes dewdrop {
+  90%
+  {
+    top:500px;
+    opacity: 0.5;
+  }
+
+  100%
+  {
+    /*animation-play-state: paused;*/
+    top:600px;
+    opacity: 0;
+
+  }
+
+
+}
+</style>
+</head>
+<body>
+<div class="flower">
+<div id="l1"onclick="dropp('535','20')">
+</div>
+<div id="l2"onclick="dropp('535',280)">
+</div>
+<div id="l3"onclick="dropp('790','20')">
+</div>
+<div id="l4"onclick="dropp('790','280')">
+</div>
+<div id="ll">
+</div>
+<div id="lc">
+</div>
+<div id="trapezoid">
+</div>
+</div>
+<div class="drop">
+</div>
+<div class="ripple">
+  <div class="ripple2">
+  </div>
+</div>
+<script>
+var c=document.getElementsByClassName('drop');
+var r=document.getElementsByClassName('ripple')
+var r2=document.getElementsByClassName('ripple2')
+c[0].addEventListener('webkitAnimationEnd',function(){
+  c[0].style.opacity='0';
+  c[0].style.webkitAnimationName='';
+
+  //r[0].style.top=c[0].style.top;
+  r[0].style.left=c[0].style.left;
+  r[0].style.webkitAnimation='rip  1 1.5s linear ';
+  r2[0].style.webkitAnimation='rip2  1 1.5s linear ';
+
+},false);
+
+r[0].addEventListener('webkitAnimationEnd',function(){
+  r[0].style.opacity='0';
+  r[0].style.webkitAnimationName='';
+},false);
+r2[0].addEventListener('webkitAnimationEnd',function(){
+  r2[0].style.opacity='0';
+  r2[0].style.webkitAnimationName='';
+},false);
+function dropp(x,y)
+{
+
+  c[0].style.top=y+'px';
+  c[0].style.left=x+'px';
+  c[0].style.opacity='1';
+  c[0].style.webkitAnimation='dewdrop 1 1s linear';
+
+};
+
+
+</script>
+
+</body>
+</html>

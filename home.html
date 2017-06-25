@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My Projects</title>
+  </head>
+  <style>
+   .menuIconBody
+   {
+     position: fixed;
+     margin-top: 10px;
+     margin-left: 6px;
+
+    width: 35px;
+    height: 25px;
+
+   }
+    .menuIcon
+    {
+      margin-top: 7px;
+      width:100%;
+      height: 7px;
+
+      border: solid 3px black;
+      border-color: black transparent black transparent;
+    }
+
+    .menuBody
+    {
+      height: 100%;
+      position: fixed;
+      display: none;
+      border: 2px solid transparent;
+    }
+    #List
+    {
+      list-style-type:none;
+      padding-left:20px;
+
+
+    }
+    ul li
+    {
+
+      border:solid 1px transparent;
+
+    }
+    ul li:hover
+    {
+      color: white;
+      background-color: darkgrey;
+
+    }
+    p
+    {
+
+      font-family: sans-serif;
+    }
+    a
+    {
+      text-decoration: none;
+      color: inherit;
+    }
+   .myContent
+   {
+     position: absolute;
+     margin-left: 0%;
+     margin-top: 0;
+     height: 100%;
+     width: 100%;
+
+   }
+
+   @keyframes menuOpen {
+     from
+     {
+       width: 0%;
+
+
+     }
+     to
+     {
+       width: 15%;
+
+     }
+
+   }
+   @keyframes ContentRight {
+     from
+     {
+       margin-left: 0%;
+
+     }
+     to
+     {
+       margin-left: 15%;
+
+     }
+
+   }
+  </style>
+
+  <body>
+
+
+
+
+
+    <div class="myContent"style="background-color:#DFE2DB;">
+      <center><br><h1 style="font-family:sans-serif;font-size:70px;margin-top:50px;">WELCOME<h1></br></center>
+
+    </div>
+
+    <div class="menuIconBody"onclick="openMenu()">
+      <div class="menuIcon">
+      </div>
+      <div class="menuIcon"style="border-color: black transparent transparent  transparent;">
+      </div>
+    </div>
+
+    <div class="menuBody">
+     <ul id="List">
+       <a href="#"><li id="Closex"onclick="closeMenu()"><h4 style="font-family:sans-serif;font-weight:normal;"> <b>Close</b> x</h4></li></a>
+       <a href="#"onclick="load('carnew.html')" ><li><p>Car</li></a>
+       <a href="#"onclick="load('calc.html')" ><li><p>Calculator</li></a>
+       <a href="#"onclick="load('TV.html')" ><li><p>TV</li></a>
+       <a href="#"onclick="load('flowerPot.html')" ><li><p>FlowerPot</li></a>
+       <a href="#"onclick="load('Piano.html')" ><li><p>Piano</li></a>
+       <a href="#"onclick="load('WebCam.html')" ><li><p>WebCam</li></a>
+       <a href="#"onclick="load('S8.html')" ><li><p>S8</li></a>
+       <a href="#"onclick="load('ImageGallery.html')" ><li><p>Image Gallery</li></a>
+     </ul>
+    </div>
+
+    <script type="text/javascript">
+
+    function openMenu()
+
+    {
+      var menu=document.getElementsByClassName('menuBody');
+      var content=document.getElementsByClassName('myContent');
+      menu[0].addEventListener('webkitAnimationEnd',function(){
+
+        menu[0].style.webkitAnimationName='';
+        menu[0].style.display='block';
+        menu[0].style.width="15%";
+
+      },false);
+      content[0].addEventListener('webkitAnimationEnd',function(){
+
+
+        content[0].style.webkitAnimationName='';
+        content[0].style.marginLeft="15%";
+        menu[0].style.display='block';
+      },false);
+
+      menu[0].style.webkitAnimation="menuOpen 1 0.5s ease-in-out forwards";
+      content[0].style.webkitAnimation="ContentRight 1 0.5s ease-in-out forwards";
+
+      //menu[0].style.transition='width 4s';
+
+
+      //document.getElementsByClassName('menuBody')[0].style.width="10%";
+      //document.getElementsByClassName('menuBody')[0].style.display="block";
+
+      document.getElementsByClassName('menuIconBody')[0].style.display='none';
+
+    }
+
+    function closeMenu() {
+      var menu=document.getElementsByClassName('menuBody');
+      var content=document.getElementsByClassName('myContent');
+       menu[0].style.display='none';
+      menu[0].addEventListener('webkitAnimationEnd',function(){
+
+        menu[0].style.webkitAnimationName='';
+        menu[0].style.display='none';
+        menu[0].style.width="0%";
+
+      },false);
+
+      content[0].addEventListener('webkitAnimationEnd',function(){
+
+        content[0].style.webkitAnimationName='';
+        content[0].style.marginLeft="0%";
+        menu[0].style.display="none";
+      },false);
+
+
+
+      menu[0].style.webkitAnimation="menuOpen 1 0.5s ease-in-out forwards reverse";
+      content[0].style.webkitAnimation="ContentRight 1 0.5s ease-in-out forwards reverse";
+
+      document.getElementsByClassName('menuIconBody')[0].style.display="block";
+      //document.getElementsByClassName('menuBody')[0].style.width="0%";
+
+      //document.getElementsByClassName('myContent')[0].style.marginLeft='0%';
+    }
+    function load(x) {
+
+    var con=document.getElementsByClassName("myContent");
+    var hml='<object type="text/html" data="'+x+'"width="100%"height="100%" ></object>';
+    con[0].innerHTML=hml;
+    }
+
+    </script>
+
+
+
+  </body>
+</html>
